@@ -62,8 +62,9 @@ cat <<EOF | kubectl apply -f -
       signers:
       - sample_signer@enterprise.com
       keyConfigs:
-      - keySecretName: my-pubkey
-        keySecretNamespace: integrity-shield-operator-system
+      - keySecret:
+          name: my-pubkey
+          namespace: integrity-shield-operator-system
 EOF
 
 manifestintegrityconstraint.constraints.gatekeeper.sh/sample-constraint created
@@ -219,8 +220,9 @@ cat <<EOF | kubectl apply -f -
       signers:
       - sample_signer@enterprise.com
       keyConfigs:
-      - keySecretName: my-pubkey
-        keySecretNamespace: integrity-shield-operator-system
+      - keySecret:
+          name: my-pubkey
+          namespace: integrity-shield-operator-system
 EOF
 ```
 
