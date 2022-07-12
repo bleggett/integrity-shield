@@ -59,7 +59,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     base='base64'
 fi
 
-YQ_VERSION=$(yq --version 2>&1 | awk '{print $3}' | cut -c 1 )
+YQ_VERSION=$(yq --version 2>&1 | awk '{print $4}' | cut -c 1 )
 if ! { [ $YQ_VERSION == "3" ] || [ $YQ_VERSION == "4" ]; } then
    echo Please choose yq version: 3.x.x or 4.x.x !
    exit 1
